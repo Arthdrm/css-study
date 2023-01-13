@@ -1,0 +1,121 @@
+/* Import Stuff */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;1,600;1,900&display=swap');
+@font-face {
+    /* Mengimpor font local dan membuat font-family kita sendiri */
+    font-family: "glass-n-bloom"; /* Nama font-family */
+    src: url("../font/Gloss_And_Bloom.ttf"); /* Sumber font */
+}
+
+/* <<<<<<<<<<<< Universal Style >>>>>>>>>>>>>>>*/
+/*============= Element Selector =============*/
+*{
+    /* Menghitung border & padding sebagai bagian dari lebar & tinggi elemen */
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(209deg, rgba(127,222,238,1) 45%, rgba(59,112,209,1) 100%);
+    /* Fix : Mengatasi background gradien linear berulang */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* ------------------------------------------- */
+    font-family: 'Poppins', sans-serif;
+    padding: 0 80px;
+}
+
+p{
+    text-align: justify;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+h1{
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 15px;
+    font-size: 50px;
+    font-family: glass-n-bloom;
+}
+
+@media screen and (max-width: 800px){
+    h1{
+        font-size: 20px;
+    }
+}
+
+img{
+    width: 100%;
+}
+
+/*============= Class Selector =============*/
+/* Font Class */
+.text-200{
+    font-weight: 200;
+    font-size: 16px;
+}
+
+.text-500{
+    font-weight: 500;
+    color: #6e6aff;    
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-start{
+    text-align: left;
+}
+
+.text-end{
+    text-align: right;
+}
+
+.text-justify{
+    text-align: justify;
+}
+
+/* Image Class */
+
+
+/* Others */
+.main-container{
+    margin-top: 0;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 2px 3px 28px -11px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 40px;    
+    max-width: 1200px;
+    border-top-left-radius: 0;
+    overflow: hidden;
+}
+
+.btn{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all .1s;
+    margin-right: 15px;
+}
+
+.main-container .content-container:not(:first-child){
+    /* Sintaks : parent child:not(selector) */
+    /* Memilih elemen dgn class content-container yg bukan merupakan child pertama dari parent dgn class main-container */
+    display: none;
+}
+
+body .btn:not(:first-of-type){
+    /* Memilih elemen dgn class btn yg bukan merupakan child pertama dari parent body */
+    background-color: darkgrey;
+}

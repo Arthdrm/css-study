@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Assets/favicon/favicon-16x16.png"">
+    <link rel="manifest" href="../Assets/favicon/site.webmanifest">
+    <!-- Universal Style -->
+    <link rel="stylesheet" href="../Assets/css/style.css"> 
+    <!-- Custom Style -->
+    <style>
+        /* Flexbox related style */
+        .flexbox{
+            position: relative;
+            display: flex;
+            border: 1px rgb(241, 85, 24) solid;
+        }
+        .item{
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 50px;
+            background-color: lightblue;
+            border: 1px black solid;
+        }
+        .desc-text{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>-FLEXBOX-</h1>
+    <div class="button-group">
+        <button class="btn">Intro</button>
+        <button class="btn">Flex Container</button>
+        <button class="btn">Flex Item</button>
+    </div>
+    <section class="main-container">
+        <div class="content-container">
+            <h2>Intro flexbox</h2>    
+            <p>Flexbox adalah sebuah property yang memudahkan kita untuk menyusun elemen baik perbaris maupun perkolom. Kelebihan utama dari flexbox adalah kemampuan containernya untuk melebar maupun mengecil sesuai dengan jumlah ruang yang tersedia</p>
+            <p>Pada CSS modern, flexbox menggantikan layout float karena kodenya jauh lebih readable dan logis.</p>
+            <p class="text-500">Sintaks :</p>
+            <img src="img/carbon.png" alt="">
+            <p class="text-500">Illustrasi :</p>
+            <img src="img/1_bw4hK0MYxFXbw7ylW2fR5Q.png" alt="">
+            <p class="text-500">Contoh penerapan :</p>
+            <div class="flexbox">
+                <div class="text-200 desc-text"><i>(Flex-Container)</i></div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </div>
+            <p class="text-500">Overview Properties :</p>
+            <img src="img/Flexbox_CheatSheet_LearnPine.png" alt="">
+        </div>      
+
+        <div class="content-container">
+            <h2>Property Flex Container</h2>
+            <p>Berikut adalah daftar property yang dapat diterapkan pada flex container.</p>
+            <h3></h3>
+            <br>
+        </div>
+
+        <div class="content-container">
+            <h2>Property Flex Item</h2>
+            <p>Flexbox adalah sebuah property yang memudahkan kita untuk menyusun elemen baik perbaris maupun in perkolom. Kelebihan utama dari flexbox adalah kemampuan containernya untuk melebar maupun mengecil sesuai dengan jumlah ruang yang tersedia</p>
+            <p>Pada CSS modern, flexbox menggantikan layout float karena kodenya jauh lebih readable dan logis.</p>            
+            <img class="img-code" src="img/carbon.png" alt="">            
+        </div>
+
+        <!-- Footer -->
+        <hr>
+        <p class="text-200">© Jan/23 Arth D.</p>            
+    </section>
+
+    <!-- Script JS -->
+    <script src="../Assets/script/efek-halaman.js"></script>
+</body>
+</html>
