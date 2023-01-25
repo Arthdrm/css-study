@@ -36,7 +36,6 @@ Prequisite :
 ->  event.target 
     Deskripsi : Merupakan property dari objek event yg merujuk pada objek (elemen) yg men-trigger event ybs.
 
-
 ->  [...iterable]
     Deskripsi : 
     Merupakan sintaks operator spread. Digunakan utk memecah/menyebar iterable menjadi elemen-elemen individu.

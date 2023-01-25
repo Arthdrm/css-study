@@ -39,12 +39,6 @@ h1{
     font-family: glass-n-bloom;
 }
 
-@media screen and (max-width: 800px){
-    h1{
-        font-size: 20px;
-    }
-}
-
 img{
     width: 100%;
 }
@@ -78,7 +72,6 @@ img{
 }
 
 /* Image Class */
-
 
 /* Others */
 .main-container{
@@ -118,4 +111,19 @@ img{
 body .btn:not(:first-of-type){
     /* Memilih elemen dgn class btn yg bukan merupakan child pertama dari parent body */
     background-color: darkgrey;
+}
+
+/*============= Media Query =============*/
+@media screen and (max-width: 414px) {
+    body{
+        padding: 0 0;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .btn{
+        font-size: 15px;
+        padding: 10px 15px;
+        margin-right: 5px;        
+    }
 }
