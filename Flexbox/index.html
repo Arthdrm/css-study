@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox</title>
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="../Assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../Assets/favicon/favicon-16x16.png"">
     <link rel="manifest" href="../Assets/favicon/site.webmanifest">
+
     <!-- Universal Style -->
     <link rel="stylesheet" href="../Assets/css/style.css"> 
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
     <!-- Custom Style -->
     <style>
         /* Flexbox related style */
@@ -23,9 +29,9 @@
             overflow: hidden;
         }
         .item{
-            padding: 20px 40px;
+            padding: 10px 30px;
             text-align: center;
-            font-size: 50px;
+            font-size: 30px;
             background-color: lightblue;
             border: 1px black solid;
         }
@@ -33,6 +39,31 @@
             position: absolute;
             top: 0;
             right: 0;
+        }
+
+        .demo-1{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .demo-2{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .demo-3{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .demo-4{
+            display:flex;
+            flex-direction: row-reverse;
+        }
+
+        .demo-5{
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -48,11 +79,11 @@
             <h2>Intro flexbox</h2>    
             <p>Flexbox adalah sebuah property yang memudahkan kita untuk menyusun elemen baik perbaris maupun perkolom. Kelebihan utama dari flexbox adalah kemampuan containernya untuk melebar maupun mengecil sesuai dengan jumlah ruang yang tersedia</p>
             <p>Pada CSS modern, flexbox menggantikan layout float karena kodenya jauh lebih readable dan logis.</p>
-            <p class="text-500">Sintaks :</p>
+            <p class="text-500 highlight">Sintaks :</p>
             <img src="img/carbon.png" alt="">
-            <p class="text-500">Illustrasi :</p>
+            <p class="text-500 highlight">Illustrasi :</p>
             <img src="img/1_bw4hK0MYxFXbw7ylW2fR5Q.png" alt="">
-            <p class="text-500">Contoh penerapan :</p>
+            <p class="text-500 highlight">Contoh penerapan :</p>
             <div class="flexbox">
                 <div class="text-200 desc-text"><i>(Flex-Container)</i></div>
                 <div class="item">1</div>
@@ -66,10 +97,157 @@
         </div>      
 
         <div class="content-container">
-            <h2>Property Flex Container</h2>
-            <p>Berikut adalah daftar property yang dapat diterapkan pada flex container.</p>
-            <h3></h3>
-            <br>
+            <h2>Property Flex Container (Parent)</h2>
+            <p>Berikut adalah daftar property yang dapat diterapkan pada flex container :</p>
+            <table>
+                <thead class="tbl-header">
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Direction</div>
+                            <span class="text-300 sub-text">Mengatur orientasi penyusunan flex item</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody class="tbl-body">
+                    <tr>
+                        <th class="first-col">Demo</th>
+                        <th class="second-col">Keterangan</th>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: column</p>
+                            <p>Menyusun flex item dalam bentuk kolom. (Merentang dari atas ke bawah)</p>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: row</p>
+                            <p>Menyusun flex item dalam bentuk baris. (Merentang dari kiri ke kanan)</p>
+                        </td>                    
+                    </tr> 
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: column-reverse</p>
+                            <p>Menyusun flex item dalam bentuk kolom dengan urutan terbalik. (Merentang dari bawah ke atas)</p>
+                        </td>                    
+                    </tr>  
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: row-reverse</p>
+                            <p>Menyusun flex item dalam bentuk baris dengan urutan terbalik. (Merentang dari kanan ke kiri)</p>
+                        </td>                    
+                    </tr>      
+                </tbody>
+            </table><br><br>
+
+            <table>
+                <thead class="tbl-header">
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Direction</div>
+                            <span class="text-300 sub-text">Mengatur orientasi penyusunan flex item</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody class="tbl-body">
+                    <tr>
+                        <th class="first-col">Demo 2 </th>
+                        <th class="second-col">Keterangan 2</th>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: column</p>
+                            <p>Menyusun flex item dalam bentuk kolom. (Merentang dari atas ke bawah)</p>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: row</p>
+                            <p>Menyusun flex item dalam bentuk baris. (Merentang dari kiri ke kanan)</p>
+                        </td>                    
+                    </tr> 
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-3">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: column-reverse</p>
+                            <p>Menyusun flex item dalam bentuk kolom dengan urutan terbalik. (Merentang dari bawah ke atas)</p>
+                        </td>                    
+                    </tr>  
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-4">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                            
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: row-reverse</p>
+                            <p>Menyusun flex item dalam bentuk baris dengan urutan terbalik. (Merentang dari kanan ke kiri)</p>
+                        </td>                    
+                    </tr>      
+                </tbody>
+            </table>                
         </div>
 
         <div class="content-container">
@@ -81,10 +259,11 @@
 
         <!-- Footer -->
         <hr>
-        <p class="text-200">© Jan/23 Arth D.</p>            
+        <p class="text-200 sub-text">© Jan/23 Arth D.</p>            
     </section>
 
     <!-- Script JS -->
+    <script src="../Assets/script/efek-accordion.js"></script>
     <script src="../Assets/script/efek-halaman.js"></script>
 </body>
 </html>
