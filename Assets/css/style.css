@@ -30,6 +30,7 @@ body{
 p{
     text-align: justify;
     line-height: 30px;
+    
 }
 
 h1{
@@ -131,9 +132,13 @@ th{
 }
 
 .tbl-body{
-    transition: all .4s;
     visibility: collapse;
     transform: scale(0);
+    transition: all .4s;
+}
+
+.highlight-tbl{
+    background-color: rgb(252, 252, 55);
 }
 
 .fa-angle-down{
@@ -159,11 +164,11 @@ th{
     margin-bottom: 5px;
 }
 
-.first-col{
+.col-40{
     width: 40%;
 }
 
-.second-col{
+.col-60{
     width: 60%;
 }
 

@@ -19,54 +19,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!-- Custom Style -->
-    <style>
-        /* Flexbox related style */
-        .flexbox{
-            position: relative;
-            display: flex;
-            border: 1px rgb(241, 85, 24) solid;
-            width: 100%;
-            overflow: hidden;
-        }
-        .item{
-            padding: 10px 30px;
-            text-align: center;
-            font-size: 30px;
-            background-color: lightblue;
-            border: 1px black solid;
-        }
-        .desc-text{
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .demo-1{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .demo-2{
-            display: flex;
-            flex-direction: row;
-        }
-
-        .demo-3{
-            display: flex;
-            flex-direction: column-reverse;
-        }
-
-        .demo-4{
-            display:flex;
-            flex-direction: row-reverse;
-        }
-
-        .demo-5{
-            display: flex;
-            justify-content: space-between;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>-FLEXBOX-</h1>
     <div class="button-group">
@@ -74,6 +29,7 @@
         <button class="btn">Flex Container</button>
         <button class="btn">Flex Item</button>
     </div>
+
     <section class="main-container">
         <div class="content-container">
             <h2>Intro flexbox</h2>    
@@ -98,6 +54,7 @@
 
         <div class="content-container">
             <h2>Property Flex Container (Parent)</h2>
+            <p>Keyword : justify -> Penyusunan Horizontal, align -> Penyusunan Vertikal.</p>
             <p>Berikut adalah daftar property yang dapat diterapkan pada flex container :</p>
             <table>
                 <thead class="tbl-header">
@@ -112,8 +69,8 @@
 
                 <tbody class="tbl-body">
                     <tr>
-                        <th class="first-col">Demo</th>
-                        <th class="second-col">Keterangan</th>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
                     </tr>
     
                     <tr>
@@ -126,7 +83,7 @@
                         </td>
                         <td>
                             <p class="code-box">flex-direction: column</p>
-                            <p>Menyusun flex item dalam bentuk kolom. (Merentang dari atas ke bawah)</p>
+                            <p>Menyusun flex item dalam bentuk kolom, yaitu item merentang dari atas ke bawah.</p>
                         </td>
                     </tr>
     
@@ -140,7 +97,7 @@
                         </td>
                         <td>
                             <p class="code-box">flex-direction: row</p>
-                            <p>Menyusun flex item dalam bentuk baris. (Merentang dari kiri ke kanan)</p>
+                            <p>Menyusun flex item dalam bentuk baris, yaitu item merentang dari kiri ke kanan.<i> (Default)</i></p>
                         </td>                    
                     </tr> 
     
@@ -154,7 +111,7 @@
                         </td>
                         <td>
                             <p class="code-box">flex-direction: column-reverse</p>
-                            <p>Menyusun flex item dalam bentuk kolom dengan urutan terbalik. (Merentang dari bawah ke atas)</p>
+                            <p>Menyusun flex item dalam bentuk kolom dengan urutan terbalik, yaitu item merentang dari bawah ke atas.</p>
                         </td>                    
                     </tr>  
     
@@ -168,18 +125,18 @@
                         </td>
                         <td>
                             <p class="code-box">flex-direction: row-reverse</p>
-                            <p>Menyusun flex item dalam bentuk baris dengan urutan terbalik. (Merentang dari kanan ke kiri)</p>
+                            <p>Menyusun flex item dalam bentuk baris dengan urutan terbalik, yaitu item merentang dari kanan ke kiri.</p>
                         </td>                    
                     </tr>      
                 </tbody>
-            </table><br><br>
+            </table><br>
 
             <table>
                 <thead class="tbl-header">
                     <tr>
                         <td colspan="2" class="text-center">
-                            <div class="text-center text-500">Flex-Direction</div>
-                            <span class="text-300 sub-text">Mengatur orientasi penyusunan flex item</span>
+                            <div class="text-center text-500">Flex-Wrap</div>
+                            <span class="text-300 sub-text">Mengatur perilaku container ketika flex item mengalami overflow</span>
                             <i class="fa-solid fa-angle-down"></i>                            
                         </td>
                     </tr>
@@ -187,74 +144,734 @@
 
                 <tbody class="tbl-body">
                     <tr>
-                        <th class="first-col">Demo 2 </th>
-                        <th class="second-col">Keterangan 2</th>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
                     </tr>
     
                     <tr>
                         <td>
-                            <div class="dotted-box demo-1">
+                            <div class="dotted-box demo-6">
                                 <div class="item">1</div>
                                 <div class="item">2</div>
-                                <div class="item">3</div>                            
+                                <div class="item">3</div>       
+                                <div class="item">4</div>                             
                             </div>
                         </td>
                         <td>
-                            <p class="code-box">flex-direction: column</p>
-                            <p>Menyusun flex item dalam bentuk kolom. (Merentang dari atas ke bawah)</p>
+                            <p class="code-box">flex-wrap: nowrap</p>
+                            <p>Membiarkan flex item untuk melebihi container. <i>(Default)</i></p>
                         </td>
                     </tr>
     
                     <tr>
                         <td>
-                            <div class="dotted-box demo-2">
+                            <div class="dotted-box demo-7">
                                 <div class="item">1</div>
                                 <div class="item">2</div>
-                                <div class="item">3</div>                            
+                                <div class="item">3</div>   
+                                <div class="item">4</div>                            
                             </div>
                         </td>
                         <td>
-                            <p class="code-box">flex-direction: row</p>
-                            <p>Menyusun flex item dalam bentuk baris. (Merentang dari kiri ke kanan)</p>
+                            <p class="code-box">flex-wrap: wrap</p>
+                            <p>Melilitkan flex item yang melebihi container ke baris berikutnya. </p>
                         </td>                    
                     </tr> 
     
                     <tr>
                         <td>
-                            <div class="dotted-box demo-3">
+                            <div class="dotted-box demo-8">
                                 <div class="item">1</div>
                                 <div class="item">2</div>
-                                <div class="item">3</div>                            
+                                <div class="item">3</div>    
+                                <div class="item">4</div>                            
                             </div>
                         </td>
                         <td>
-                            <p class="code-box">flex-direction: column-reverse</p>
-                            <p>Menyusun flex item dalam bentuk kolom dengan urutan terbalik. (Merentang dari bawah ke atas)</p>
-                        </td>                    
-                    </tr>  
-    
-                    <tr>
-                        <td>
-                            <div class="dotted-box demo-4">
-                                <div class="item">1</div>
-                                <div class="item">2</div>
-                                <div class="item">3</div>                            
-                            </div>
-                        </td>
-                        <td>
-                            <p class="code-box">flex-direction: row-reverse</p>
-                            <p>Menyusun flex item dalam bentuk baris dengan urutan terbalik. (Merentang dari kanan ke kiri)</p>
+                            <p class="code-box">flex-direction: wrap-reverse</p>
+                            <p>Sama seperti nilai wrap, hanya saja item dililitkan ke atas.</p>
                         </td>                    
                     </tr>      
                 </tbody>
-            </table>                
+            </table><br>  
+            
+            <table>
+                <thead class="tbl-header highlight-tbl">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Flow</div>
+                            <span class="text-300 sub-text">Merupakan shorthand dari flex-direction dan flex-wrap</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Isi Tabel -->
+                    <tr>
+                        <td>
+                            <div class="dotted-box demo-9">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>       
+                                <div class="item">4</div>                             
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-flow: flex-direction flex-wrap</p>
+                            <p>Pada contoh disamping, nilai dari flex-flow diatur menjadi row-reverse & wrap.</p>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>  
+            
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Justify-Content</div>
+                            <span class="text-300 sub-text">Mengatur penyusunan flex item pada main axis</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-10">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: flex-start</p>
+                            <p>Item disusun di awal main axis. <i>(Default)</i></p>
+                        </td>
+
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-11">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: flex-end</p>
+                            <p>Item disusun di akhir main axis.</p>
+                        </td>                        
+                    </tr> 
+
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-12">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: center</p>
+                            <p>Item disusun di tengah-tengah main axis.</p>
+                        </td>                        
+                    </tr>
+
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-13">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: space-between</p>
+                            <p>Memberi spasi dengan lebar yang sama diantara item.</p>
+                        </td>                        
+                    </tr>   
+                    
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-14">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: space-around</p>
+                            <p>Memberikan spasi yang sama diantara item, dengan spasi awalan & akhiran yang bernilai 1/2 dari lebar spasi diantara item.</p>
+                        </td>                        
+                    </tr>                    
+
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-15">
+                                <div class="item">1</div>                          
+                                <div class="item">2</div>
+                                <div class="item">3</div>
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">justify-content: space-evenly</p>
+                            <p>Mirip seperti space-around, hanya saja spasi awalan dan akhiran sama besarnya dengan spasi diantara item.</p>
+                        </td>                        
+                    </tr>                            
+                </tbody>
+            </table><br>              
+
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Align-Items</div>
+                            <span class="text-300 sub-text">Mengatur penyusunan flex item pada cross axis</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-16">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-items: flex-start</p>
+                            <p>Item disusun di awal cross axis.</p>
+                        </td>
+                    </tr> 
+
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-17">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-items: flex-end</p>
+                            <p>Item disusun di akhir cross axis.</p>
+                        </td>
+                    </tr> 
+                    
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-18">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-items: center</p>
+                            <p>Item disusun di tengah-tengah cross axis.</p>
+                        </td>
+                    </tr> 
+                    
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-19">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-items: baseline</p>
+                            <p>Item disusun agar baseline (garis tulisan) mereka setara</p>
+                        </td>
+                    </tr> 
+                    
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-20">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-items: stretch</p>
+                            <p>Item direntangkan agar memenuhi ruang kosong yang tersedia. <i>(Default)</i></p>
+                        </td>
+                    </tr>                     
+                </tbody>
+            </table><br>  
+
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Align-Content</div>
+                            <span class="text-300 sub-text">Mengatur penyusunan flex item untuk beberapa baris/kolom sekaligus pada cross axis</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box demo-21">
+                                <div class="item">1</div>  
+                                <div class="item">2</div>                          
+                                <div class="item">3</div>                          
+                                <div class="item">4</div>                          
+                                <div class="item">5</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-content:flex-start</p>
+                            <p>Baris/kolom item disusun di awal cross axis.</p>
+                        </td>
+                    </tr> 
+
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-22">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:flex-end</p>
+                        <p>Baris/kolom item disusun di akhir cross axis.</p>
+                    </td>
+                </tr>    
+                
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-23">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:center</p>
+                        <p>Baris/kolom item disusun di tengah-tengah cross axis.</p>
+                    </td>
+                </tr> 
+
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-24">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:normal</p>
+                        <p>Posisi default dari baris/kolom item pada cross axis. <i>(Default)</i></p>
+                    </td>
+                </tr>    
+                
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-25">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:space-between</p>
+                        <p>Memberi spasi yang merata diantara baris/kolom item.</p>
+                    </td>
+                </tr>  
+                
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-26">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:space-around</p>
+                        <p>Memberi spasi secara merata diantara baris/kolom item, dan memberi 1/2 spasi pada awalan & akhiran baris/kolom.</p>
+                    </td>
+                </tr>    
+                
+                <!-- Baris Tabel -->
+                <tr>
+                    <!-- Demo -->
+                    <td>
+                        <div class="dotted-box demo-27">
+                            <div class="item">1</div>  
+                            <div class="item">2</div>                          
+                            <div class="item">3</div>                          
+                            <div class="item">4</div>                          
+                            <div class="item">5</div>                          
+                        </div>
+                    </td>
+                    <!-- Keterangan -->
+                    <td>
+                        <p class="code-box">align-content:space-evenly</p>
+                        <p>Mirip seperti space-around, hanya saja spasi yang diberikan pada awalan & akhiran baris sama lebarnya dengan lebar spasi diantara baris/kolom.</p>
+                    </td>
+                </tr>                 
+                </tbody>
+            </table><br>  
         </div>
 
         <div class="content-container">
-            <h2>Property Flex Item</h2>
-            <p>Flexbox adalah sebuah property yang memudahkan kita untuk menyusun elemen baik perbaris maupun in perkolom. Kelebihan utama dari flexbox adalah kemampuan containernya untuk melebar maupun mengecil sesuai dengan jumlah ruang yang tersedia</p>
-            <p>Pada CSS modern, flexbox menggantikan layout float karena kodenya jauh lebih readable dan logis.</p>            
-            <img class="img-code" src="img/carbon.png" alt="">            
+            <h2>Property Flex Item (Children)</h2>
+            <p>Berikut merupakan beberapa properti yang dapat digunakan pada flex item</p>
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Order</div>
+                            <span class="text-300 sub-text">Mengatur urutan penyusunan suatu flex-item</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container">
+                                <div class="item demo-28">1</div>   
+                                <div class="item">2</div>                          
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">order: integer</p>
+                            <p>Kita dapat memberi nilai integer pada properti ini (numerik tanpa unit). Item dengan nilai order terbesar akan diletakkan paling akhir. Nilai order default adalah 0.</p>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>   
+
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Align-Self</div>
+                            <span class="text-300 sub-text">Mengatur penyusunan flex item secara individu pada cross axis</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container demo-29">
+                                <div class="item">1</div>    
+                                <div class="item demo-30">2</div>                          
+                                <div class="item">3</div>                          
+
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">align-self: nilai</p>
+                            <p>Kita dapat memberi nilai yang sama seperti nilai properti align-items.</p>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br> 
+            
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Grow</div>
+                            <span class="text-300 sub-text">Mengatur berapa banyak ruang kosong yang akan diambil oleh suatu item</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container">
+                                <div class="item demo-31">1</div>       
+                                <div class="item">2</div>                          
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">flex-grow: integer</p>
+                            <p>Jika terdapat ruang kosong, pengambilan ruang kosong ini akan menyebabkan ukuran item untuk membesar. Berikut merupakan gambarannya :</p>
+                            <ul>
+                                <li>0 : Item tidak mengambil ruang kosong yang ada. <i>(Default)</i></li>
+                                <li>1 : Item mengambil ruang kosong yang ada.</li>
+                                <li>2 : Item mengambil ruang kosong 2x lebih banyak ketimbang dari item lainnya.</li>
+                                <li>3 : Item mengambil ruang kosong 3x lebih banyak ketimbang dari item lainnya.</li>
+                                <li>dst.</li>
+                            </ul>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>      
+            
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Shrink</div>
+                            <span class="text-300 sub-text">Mengatur mekanisme penyusutan suatu item ketika tidak tersedia cukup ruang pada container</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container">
+                                <div class="item ">1</div>    
+                                <div class="item ">2</div>                          
+                                <div class="item">3</div>   
+                                <div class="item demo-32">4</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">flex-shrink</p>
+                            <p>Biasanya digunakan bersamaan dengan flex-basis, flex-shrink akan meng-override ukuran dari flex-basis jika ruang yang tersedia tidak mencukupi. Berikut merupakan mekanismenya :</p>
+                            <ul>
+                                <li>0 : Item tidak menyusut.</li>
+                                <li>1 : Item dapat menyusut.</li>
+                                <li>2 : Item menyusut 2x lebih kecil ketimbang item lain.</li>
+                                <li>dst.</li>
+                            </ul>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>    
+            
+            <table>
+                <thead class="tbl-header">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex-Basis</div>
+                            <span class="text-300 sub-text">Menentukan ukuran default item sebelum item tersebut diperbesar/dikecilkan</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container">
+                                <div class="item">1</div>     
+                                <div class="item demo-33">2</div>                          
+                                <div class="item">3</div>                          
+
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">flex-basis: nilai</p>
+                            <p>Kita dapat memberi nilai layaknya nilai width & height. Catatan : Ukuran flex-basis akan diprioritaskan dari ukuran width/height.</p>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>              
+
+            <table>
+                <thead class="tbl-header highlight-tbl">
+                    <!-- Header -->
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Flex</div>
+                            <span class="text-300 sub-text">Merupakan shorthand dari flex-grow, flex-shrink, dan flex-basis</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+        
+                <tbody class="tbl-body">
+                    <!-- Sub-header -->
+                    <tr>
+                        <th class="col-40">Demo</th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+        
+                    <!-- Baris Tabel -->
+                    <tr>
+                        <!-- Demo -->
+                        <td>
+                            <div class="dotted-box flex-container">
+                                <div class="item demo-34">1</div> 
+                                <div class="item">2</div>                          
+                                <div class="item">3</div>                          
+                            </div>
+                        </td>
+                        <!-- Keterangan -->
+                        <td>
+                            <p class="code-box">flex: flex-grow flex-shrink flex-basis</p>
+                            <p>Ketentuan pemberian value : </p>
+                            <ul>
+                                <li>1 value : Berlaku untuk seluruh property.</li>
+                                <li>2 value : Value pertama berlaku untuk flex-grow, sedangkan value kedua bisa berlaku untuk flex-shrink/flex-basis (tergantung nilainya).</li>
+                                <li>3 value : Value pertama utk flex-grow, kedua utk flex-shrink, ketiga utk flex-basis.</li>
+                            </ul>
+                            <p>Kita juga dapat memberi value berupa keyword antara lain :</p>
+                            <ul>
+                                <li>Auto : Ekuivalen dengan "flex: 1 1 auto".</li>
+                                <li>Initial : Ekuivalen dengan "flex: 0 1 auto". <i>(Default)</i></li>
+                                <li>None : Ekuivalen dengan "flex: 0 0 auto".</li>
+                            </ul>
+                        </td>
+                    </tr> 
+                </tbody>
+            </table><br>              
         </div>
 
         <!-- Footer -->
