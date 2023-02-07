@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../Assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Assets/favicon/favicon-16x16.png"">
+    <link rel="manifest" href="../Assets/favicon/site.webmanifest">
+
+    <!-- Universal Style -->
+    <link rel="stylesheet" href="../Assets/css/style.css"> 
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal-container">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <i class="fa-solid fa-xmark js-btn-close"></i>                
+                <h2>minmax(min, max)</h2>
+                <hr>
+                <h3>Deskripsi</h3>
+                <p>Fungsi ini menentukan batas ukuran minimum & maksimum sebuah elemen. Jika ruang tersedia, ukuran awal elemen akan sama dengan nilai max secara default.</p>
+                <h3>Parameter</h3>
+                <ul>
+                    <li>min → Menentukan ukuran minimum elemen.</li>
+                    <li>max → Menentukan ukuran maksimum elemen.</li>
+                </ul>
+                <h3>Demo</h3>
+                <div class="dotted-box grid demo-2">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div> 
+                    <div class="item">4</div>  
+                    <div class="item">5</div>  
+                    <div class="item">6</div>  
+                    <div class="item">7</div>  
+    
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div> 
+                    <div class="item">4</div>  
+                    <div class="item">5</div>  
+                    <div class="item">6</div>  
+                    <div class="item">7</div>                  
+                </div> 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores saepe deleniti iste earum nemo autem ut nesciunt omnis, nulla natus reprehenderit, facilis consequatur excepturi vel quisquam, totam non officia ea?</p>               
+            </div>
+        </div>
+    </div>    
+    <div class="modal-container">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <i class="fa-solid fa-xmark js-btn-close"></i>                
+                <h2>repeat(jumlah_pengulangan, format_kolom)</h2>
+                <hr>
+                <h3>Deskripsi</h3>
+                <p>Fungsi ini menentukan batas ukuran minimum & maksimum sebuah elemen. Jika ruang tersedia, ukuran awal elemen akan sama dengan nilai max secara default.</p>
+                <h3>Parameter</h3>
+                <ul>
+                    <li>min → Menentukan ukuran minimum elemen.</li>
+                    <li>max → Menentukan ukuran maksimum elemen.</li>
+                </ul>
+                <h3>Demo</h3>
+                <div class="dotted-box grid demo-2">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div> 
+                    <div class="item">4</div>  
+                    <div class="item">5</div>  
+                    <div class="item">6</div>  
+                    <div class="item">7</div>  
+    
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div> 
+                    <div class="item">4</div>  
+                    <div class="item">5</div>  
+                    <div class="item">6</div>  
+                    <div class="item">7</div>                  
+                </div> 
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores saepe deleniti iste earum nemo autem ut nesciunt omnis, nulla natus reprehenderit, facilis consequatur excepturi vel quisquam, totam non officia ea?</p>               
+            </div>
+        </div>
+    </div> 
+
+    <h1>-GRID-</h1>
+    <div class="button-group">
+        <button class="btn active">Intro</button>
+        <button class="btn">Grid Layout</button>
+        <button class="btn">Grid Item</button>
+    </div>
+
+    <section class="main-container">
+        <div class="content-container active">
+            <h2>Intro Grid</h2>    
+            <p>Grid juga merupakan metode layout modern layaknya flexbox, tetapi tidak seperti flexbox yang hanya bisa mengatur layout perbaris/perkolom saja, grid dapat mengatur layout untuk baris & kolom sekaligus. Kita dapat menganggap layout grid sebagai layout tabel yang fleksibel & responsif.</p>
+            <p>Untuk membuat grid container, kita dapat menggunakan nilai "<b>grid</b>" ataupun "<b>grid-inline</b>". Perbedaan antara keduanya sama seperti perbedaan antara "<b>block</b>" dan "<b>inline-block</b>".</p>
+            <p>Berikut merupakan beberapa terminologi penting pada grid : </p>
+            <ul>
+                <li><b>Grid container</b> : Elemen yang memiliki "display:grid".</li>
+                <li><b>Grid item</b> : Children dari grid container.</li>
+                <li><b>Grid line</b> : Garis pemisah yang membentuk struktur grid. Grid line dapat berupa garis vertikal (column line), maupun horizontal (row line). Garis ini nantinya berfungsi sebagai patokan penyusunan posisi item pada container.</li>
+                <li><b>Grid cell</b> : Unit terkecil pada layout grid, biasanya berbentuk segi empat.</li>
+                <li><b>Grid track</b> : Baris/kolom grid.</li>
+                <li><b>Grid area</b>  : Gabungan dari beberapa grid cell. Selalu berbentuk persegi.</li>
+                <li><b>Gutter</b> : Ruang diantara baris/kolom layout grid (gap). Kita juga dapat menganggap gutter sebagai ukuran grid line.</li>
+            </ul>
+            <p class="text-500 highlight">Illustrasi :</p>
+            <img src="img/illust-1.png" alt="">
+
+            <p class="text-500 highlight">Overview Properties :</p>
+            <img src="img/LearnPine_Grid_CheatSheet.png" alt="">
+        </div>      
+
+        <div class="content-container">
+            <h2>Property Grid Container (Parent)</h2>
+            <p>Beberapa property flexbox juga dapat digunakan pada grid container, seperti justify-content, align-items, dan align-content.</p>
+            <p>Berikut adalah daftar property yang dapat diterapkan pada flex container :</p>
+            <table>
+                <thead class="tbl-header">
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Grid-Template-Columns</div>
+                            <span class="text-300 sub-text">Menentukan jumlah serta ukuran kolom yang akan dibuat pada grid container</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody class="tbl-body">
+                    <tr>
+                        <th class="col-40">
+                            Demo
+                            <i class="fa-sharp fa-solid fa-rotate-left"></i>                              
+                        </th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box grid demo-1">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>     
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>                                                         
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: [nama-grid-line] ukuran-kolom ... [nama-grid-line]</p>
+                            <p>Setiap nilai ukuran-kolom yang kita berikan akan merepresentasikan sebuah kolom. Penentuan nama grid line bersifat opsional. Secara default grid line akan memiliki nama berupa integer yang dimulai dari 1.</p>
+                            <p>Kita dapat menggunakan unit "<b>fr</b>" untuk mengatur ukuran kolom sebagai pecahan dari ruang kosong yang tersedia. Selain itu, terdapat beberapa fungsi yang dapat kita gunakan bersamaan dengan nilai ukuran kolom.</p>
+                            <p>
+                                Kita dapat menggunakan fungsi seperti 
+                                <span class="link-modal">minmax</span>
+                                dan
+                                <span class="link-modal">repeat.</span>                                                                
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="dotted-box grid demo-1 debug-2">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>     
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>                                                         
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: [nama-grid-line] ukuran-kolom ... [nama-grid-line]</p>
+                            <p>Setiap nilai ukuran-kolom yang kita berikan akan merepresentasikan sebuah kolom. Penentuan nama grid line bersifat opsional. Secara default grid line akan memiliki nama berupa integer yang dimulai dari 1.</p>
+                            <p>Kita dapat menggunakan unit "<b>fr</b>" untuk mengatur ukuran kolom sebagai pecahan dari ruang kosong yang tersedia. Selain itu, terdapat beberapa fungsi yang dapat kita gunakan bersamaan dengan nilai ukuran kolom.</p>
+                            <p>
+                                Kita dapat menggunakan fungsi seperti 
+                                <span class="link-modal">minmax</span>
+                                dan
+                                <span class="link-modal">repeat.</span>                                                                
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+
+            <table>
+                <thead class="tbl-header">
+                    <tr>
+                        <td colspan="2" class="text-center">
+                            <div class="text-center text-500">Grid-Template-Columns</div>
+                            <span class="text-300 sub-text">Menentukan jumlah serta ukuran kolom yang akan dibuat pada grid container</span>
+                            <i class="fa-solid fa-angle-down"></i>                            
+                        </td>
+                    </tr>
+                </thead>
+
+                <tbody class="tbl-body">
+                    <tr>
+                        <th class="col-40">
+                            Demo
+                            <i class="fa-sharp fa-solid fa-rotate-left"></i>                              
+                        </th>
+                        <th class="col-60">Keterangan</th>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <div class="dotted-box grid demo-1 debug">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>     
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>                                                         
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: [nama-grid-line] ukuran-kolom ... [nama-grid-line]</p>
+                            <p>Setiap nilai ukuran-kolom yang kita berikan akan merepresentasikan sebuah kolom. Penentuan nama grid line bersifat opsional. Secara default grid line akan memiliki nama berupa integer yang dimulai dari 1.</p>
+                            <p>Kita dapat menggunakan unit "<b>fr</b>" untuk mengatur ukuran kolom sebagai pecahan dari ruang kosong yang tersedia. Selain itu, terdapat beberapa fungsi yang dapat kita gunakan bersamaan dengan nilai ukuran kolom.</p>
+                            <p>
+                                Kita dapat menggunakan fungsi seperti 
+                                <span class="link-modal">minmax</span>
+                                dan
+                                <span class="link-modal">repeat.</span>                                                                
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="dotted-box grid demo-1 debug">
+                                <div class="item">1</div>
+                                <div class="item">2</div>
+                                <div class="item">3</div>     
+                                <div class="item">4</div>
+                                <div class="item">5</div>
+                                <div class="item">6</div>                                                         
+                            </div>
+                        </td>
+                        <td>
+                            <p class="code-box">flex-direction: [nama-grid-line] ukuran-kolom ... [nama-grid-line]</p>
+                            <p>Setiap nilai ukuran-kolom yang kita berikan akan merepresentasikan sebuah kolom. Penentuan nama grid line bersifat opsional. Secara default grid line akan memiliki nama berupa integer yang dimulai dari 1.</p>
+                            <p>Kita dapat menggunakan unit "<b>fr</b>" untuk mengatur ukuran kolom sebagai pecahan dari ruang kosong yang tersedia. Selain itu, terdapat beberapa fungsi yang dapat kita gunakan bersamaan dengan nilai ukuran kolom.</p>
+                            <p>
+                                Kita dapat menggunakan fungsi seperti 
+                                <span class="link-modal">minmax</span>
+                                dan
+                                <span class="link-modal">repeat.</span>                                                                
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+      
+        </div>
+
+        <div class="content-container">
+            <h2>Property Flex Item (Children)</h2>
+            <p>Berikut merupakan beberapa properti yang dapat digunakan pada flex item</p>
+            
+        </div>
+
+        <!-- Footer -->
+        <hr>
+        <p class="text-200 sub-text">© Jan/23 Arth D.</p>            
+    </section>
+
+    <!-- Script JS -->
+    <script src="../Assets/script/efek-halaman.js"></script>    
+    <script src="../Assets/script/efek-reset.js"></script>
+    <script src="../Assets/script/efek-accordion.js"></script>
+    <script src="../Assets/script/efek-modal.js"></script>
+</body>
+</html>

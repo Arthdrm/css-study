@@ -30,7 +30,6 @@ body{
 p{
     text-align: justify;
     line-height: 30px;
-    
 }
 
 h1{
@@ -96,6 +95,38 @@ th{
     background-color: yellow;
 }
 
+/* Utility */
+.hidden{
+    visibility: hidden;
+}
+
+/* Icon style */
+.fa-angle-down{
+    position: absolute;
+    right: 20px;
+    bottom: 25%;
+    font-size: 35px;
+    transition: all .4s;
+}
+
+.fa-xmark{
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    opacity: .7;
+    font-size: 35px;
+}
+
+.fa-rotate-left{
+    position: absolute;
+    top: 30%;
+    right: 3%;
+    opacity: .7;
+    cursor: pointer;
+    animation: rotation1 .4s linear;
+}
+
 /* Others */
 .main-container{
     margin-top: 0;
@@ -110,10 +141,14 @@ th{
     overflow: hidden;
 }
 
+.content-container{
+    display: none;
+}
+
 .btn{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    background-color: white;
+    background-color: darkgrey;
     border: none;
     font-weight: 600;
     border-top-left-radius: 20px;
@@ -141,18 +176,12 @@ th{
     background-color: rgb(252, 252, 55);
 }
 
-.fa-angle-down{
-    position: absolute;
-    right: 20px;
-    bottom: 25%;
-    font-size: 35px;
-    transition: all .4s;
-}
-
 .dotted-box{
     padding: 5px;
     border: 1px dashed black;
     border-radius: 5px;
+    resize: both;
+    overflow: auto;    
 }
 
 .code-box{
@@ -166,25 +195,64 @@ th{
 
 .col-40{
     width: 40%;
+    position: relative;
 }
 
 .col-60{
     width: 60%;
 }
 
-/* Complex selector */
-.main-container .content-container:not(:first-child){
-    /* Sintaks : parent child:not(selector) */
-    /* Memilih elemen dgn class content-container yg bukan merupakan child pertama dari parent dgn class main-container */
-    display: none;
+.link-modal{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
 }
 
-body .btn:not(:first-of-type){
-    /* Memilih elemen dgn class btn yg bukan merupakan child pertama dari parent body */
-    background-color: darkgrey;
+.modal-container{
+    position: fixed;
+    z-index: 2;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 0vh;
+    opacity: 0;
+    transition: all .4s ease-out;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+.modal-content{
+    width: 1000px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.modal-wrapper{
+    overflow-y: auto;
+    max-height: 100%;
+}
+
 
 /* Dynamic Class */
+.content-container.active{
+    display: block;
+}
+
+.btn.active{
+    background-color: white;
+}
+
+.modal-container.active{
+    height: 100vh;
+    opacity: 1;
+}
+
 .tbl-body.active{
     visibility: visible;
     transform: scale(1);
@@ -194,10 +262,32 @@ body .btn:not(:first-of-type){
     transform: rotate(-180deg);
 }
 
+.fa-rotate-left.active{
+    animation: rotation2 .4s linear;
+}
+
 /*============= Animation =============*/
 @keyframes gradient-animation {
     0%{background-position:0% 50%}
     100%{background-position:80% 50%}
+}
+
+@keyframes rotation1{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotation2{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
 }
 
 

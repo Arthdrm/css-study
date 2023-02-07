@@ -44,43 +44,41 @@
 *       menggunakan method-method array pada objek tsb.
 *
 * -)    array.IndexOf(elemen)
-*       Deskripsi : Method dari objek array yg digunakan utk mendapatkan nilai index dari sebuah elemen array.
+*       Deskripsi : 
+*       Mencari index dari parameter elemen pada array. Ingat bahwa parameter elemen haruslah berupa elemen dari array ybs.
 *==== END OF PREFACE ====
 */
 
-// Mendapatkan seluruh elemen dengan class btn (Button Halaman).
-let buttons = document.querySelectorAll(".btn");
-
-// Mendapatkan seluruh elemen dengan class content-container (Konten Halaman).
-let div = document.querySelectorAll(".content-container");
-
-// Mengiterasi node list buttons menggunakan loop for of.
-// Iterasi dilakukan utk memudahkan kita dalam menambahkan event listener ke tiap-tiap button.      
+const buttons = document.querySelectorAll(".btn");
+const containers = document.querySelectorAll(".content-container");
+  
 for(let btn of buttons){
     // Menambahkan event handler click pada button.
     btn.addEventListener("click", (e) => {
-        //Mengubah bg-color button saat ini menjadi putih.
-        e.target.style.backgroundColor = "white";
+        const index = [...buttons].indexOf(e.target);
+        const target_cont = containers[index];        
 
-        //Mendapatkan index button saat ini.
-        //Nilai index diperlukan sebagai penghubung antara button dgn konten halaman.
-        let index = [...buttons].indexOf(e.target);
-
-        //Menyembunyikan konten halaman kecuali konten halaman yg index-nya sm dengan index button saat ini.
-        for(let x of div){
-            if( x != div[index]){
-                x.style.display = "none";
-            }else{
-                x.style.display = "block";
+        /* Mekanisme Button */
+        if(!(e.target.classList.contains("active"))){
+            // "Menghidupkan" button yang diklik.
+            e.target.classList.toggle("active");
+        }
+        for(let btn_2 of buttons){
+            // "Mematikan" button yang tidak diklik.
+            if(btn_2 != e.target && btn_2.classList.contains("active")){
+                btn_2.classList.toggle("active");
             }
         }
-
-        // e.target.parentNode.children digunakan utk mendapatkan sibling dari elemen saat ini.
-        // Loop dibawah digunakan utk mengiterasi seluruh sibling dari button saat ini.
-        for(let x of e.target.parentNode.children){
-            if(x != e.target){
-                // Mengubah warna button selain button saat ini menjadi gelap.
-                x.style.backgroundColor = "darkgrey";
+        
+        /* Mekanisme Halaman */
+        if(!(target_cont.classList.contains("active"))){
+            // "Menghidupkan" halaman yang diklik.
+            target_cont.classList.toggle("active");              
+        }
+        for(let container of containers){
+            // "Mematikan" halaman yang tidak diklik.
+            if(container != target_cont && container.classList.contains("active")){
+                container.classList.toggle("active");
             }
         }
     })

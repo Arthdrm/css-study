@@ -1,0 +1,29 @@
+.grid{
+    display: grid;
+}
+
+.item{
+    border-radius: 7px;
+    text-align: center;
+    font-size: 20px;
+    background-color: red;
+    color: white;    
+}
+
+.demo-1{
+    grid-template-columns: [start] 1fr 1fr 1fr 1fr [end];
+    gap: 10px;
+}
+
+.demo-2{
+    gap: 10px;
+    grid-template-columns: 1fr 1fr minmax(100px, 300px);
+}
+
+.debug{
+    width: 80%;
+}
+
+.debug-2{
+    width: 60%;
+}
